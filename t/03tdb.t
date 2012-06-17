@@ -120,7 +120,7 @@ foreach (0 .. 9)
 	is("$emb", "http://example.com/");
 }
 
-my $complex = URI->new('tdb:2000-01-01T12:34:56.789+00:00:urn:example.com:foo');
+my $complex = URI->new('tdb:2000-01-01T12:34:56.789+00:00:urn:example:foo');
 
 is(
 	$complex->datetime->year,
@@ -132,7 +132,7 @@ is(
 );
 is(
 	$complex->embedded_uri,
-	'urn:example.com:foo',
+	'urn:example:foo',
 );
 
 done_testing();
