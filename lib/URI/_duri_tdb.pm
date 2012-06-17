@@ -190,7 +190,9 @@ sub datetime
 				blessed($dt) and
 				$dt->isa('DateTime') || $dt->isa('DateTime::Incomplete')
 			);
-		$self->datetime_string($self->_serialize_datetime($dt), 1);
+		my $ser = $self->_serialize_datetime($dt);
+		$self->datetime_string($ser, 1);
+		return $ser;
 	}
 	
 	$self->_parse_datetime($self->datetime_string);
@@ -252,7 +254,11 @@ sub _deconstruct
 		$
 	}x))
 	{
-		return @+{qw< scheme datetime embedded >};
+		# NOTE: We cannot just return the hash slice. We need to do
+		# the assignment first. This is a workaround to a bizarro bug
+		# in Perl 5.10 and 5.12 (and maybe 5.14?)
+		my @parts = @+{qw< scheme datetime embedded >};
+		return @parts;
 	}
 	
 	else
