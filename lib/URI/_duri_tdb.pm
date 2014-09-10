@@ -7,7 +7,7 @@ use utf8;
 
 BEGIN {
 	$URI::_duri_tdb::AUTHORITY = 'cpan:TOBYINK';
-	$URI::_duri_tdb::VERSION   = '0.002';
+	$URI::_duri_tdb::VERSION   = '0.003';
 }
 
 use Carp;

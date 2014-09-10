@@ -5,7 +5,7 @@ use strict;
 
 BEGIN {
 	$URI::duri::AUTHORITY = 'cpan:TOBYINK';
-	$URI::duri::VERSION   = '0.002';
+	$URI::duri::VERSION   = '0.003';
 }
 
 use base 'URI::_duri_tdb';
