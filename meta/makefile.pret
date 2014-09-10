@@ -1,0 +1,7 @@
+@prefix deps:  <http://ontologi.es/doap-deps#> .
+
+<http://purl.org/NET/cpan-uri/dist/URI-duri/project>
+	deps:runtime-requirement         [ deps:on "DateTime::Incomplete"^^deps:CpanId ];
+	deps:runtime-requirement         [ deps:on "URI"^^deps:CpanId ];
+	deps:test-requirement            [ deps:on "Test::More 0.61"^^deps:CpanId ].
+
